@@ -1,84 +1,4 @@
-import java.util.ArrayList;
 import java.util.Scanner;
-
-class Motor {
-    String merek;
-    String model;
-    int tahun;
-    int harga;
-
-    Motor(String merek, String model, int tahun, int harga) {
-        this.merek = merek;
-        this.model = model;
-        this.tahun = tahun;
-        this.harga = harga;
-    }
-
-    @Override
-    public String toString() {
-        return merek + " " + model + " - Tahun " + tahun + " - Rp " + harga;
-    }
-}
-
-class BeliMotor {
-    String nama;
-    String alamat;
-    String nomorTelepon;
-    Motor motor;
-    int jumlah;
-    int totalHarga;
-
-    BeliMotor(String nama, String alamat, String nomorTelepon, Motor motor, int jumlah) {
-        this.nama = nama;
-        this.alamat = alamat;
-        this.nomorTelepon = nomorTelepon;
-        this.motor = motor;
-        this.jumlah = jumlah;
-        this.totalHarga = motor.harga * jumlah;
-    }
-
-    public void printInfo() {
-        System.out.println("-------------------");
-        System.out.println("Nama: " + nama);
-        System.out.println("Alamat: " + alamat);
-        System.out.println("Nomor Telepon: " + nomorTelepon);
-        System.out.println("Merk: " + motor.merek);
-        System.out.println("Model: " + motor.model);
-        System.out.println("Tahun: " + motor.tahun);
-        System.out.println("Harga: Rp " + motor.harga);
-        System.out.println("-------------------");
-    }
-}
-
-class MotorStore {
-    private ArrayList<Motor> motorList;
-
-    public MotorStore() {
-        motorList = new ArrayList<>();
-        initializeMotors();
-    }
-    private void initializeMotors() {
-        motorList.add(new Motor("Honda", "Beat", 2023, 19000000));
-        motorList.add(new Motor("Honda", "CBR1000RR-R", 2022, 38000000));
-        motorList.add(new Motor("Yamaha", "NMax", 2023, 28000000));
-        motorList.add(new Motor("Yamaha", "MT-15", 2021, 25000000));
-        motorList.add(new Motor("Suzuki", "GSX-R150", 2021, 23000000));
-        motorList.add(new Motor("Suzuki", "SV650X", 2022, 30000000));
-    }
-
-    public void displayMotorList() {
-        System.out.println("Daftar Motor:");
-        for (int i = 0; i < motorList.size(); i++) {
-            System.out.println((i + 1) + ". " + motorList.get(i));
-        }
-    }
-    public Motor getMotorByIndex(int index) {
-        return motorList.get(index);
-    }
-    public ArrayList<Motor> getMotorList() {
-        return motorList;
-    }
-}
 
 public class PenjualanMotor {
     public static void main(String[] args) {
@@ -226,4 +146,3 @@ public class PenjualanMotor {
         }
     }
 }
-
